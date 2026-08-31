@@ -1,0 +1,264 @@
+/* ========================================
+   JHAYCODES DESIGN TOKENS
+   ======================================== */
+
+
+/* ========================================
+   DARK THEME
+   ======================================== */
+
+:root {
+  /* ---------- Backgrounds ---------- */
+
+  --color-bg: #0a0a0a;
+  --color-surface: #111111;
+  --color-surface-elevated: #181818;
+
+
+  /* ---------- Text ---------- */
+
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #a3a3a3;
+  --color-text-muted: #737373;
+  --color-text-on-accent: #ffffff;
+
+
+  /* ---------- Borders ---------- */
+
+  --color-border: #262626;
+
+
+  /* ---------- Brand ---------- */
+
+  --color-accent: #2563eb;
+
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+
+
+  /* ---------- Font Families ---------- */
+
+  --font-display: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+
+  /* ---------- Font Sizes ---------- */
+
+  --font-size-display: clamp(3.5rem, 8vw, 8rem);
+
+  --font-size-h1: clamp(2.75rem, 6vw, 5.5rem);
+
+  --font-size-h2: clamp(2.25rem, 4vw, 4rem);
+
+  --font-size-h3: clamp(1.5rem, 2.5vw, 2rem);
+
+  --font-size-body-lg: 1.25rem;
+
+  --font-size-body: 1rem;
+
+  --font-size-sm: 0.875rem;
+
+  --font-size-xs: 0.75rem;
+
+
+  /* ---------- Font Weights ---------- */
+
+  --font-weight-regular: 400;
+
+  --font-weight-medium: 500;
+
+  --font-weight-semibold: 600;
+
+  --font-weight-bold: 700;
+
+  --font-weight-extrabold: 800;
+
+
+  /* ---------- Line Heights ---------- */
+
+  --line-height-tight: 1.05;
+
+  --line-height-heading: 1.15;
+
+  --line-height-body: 1.6;
+
+  --line-height-relaxed: 1.75;
+
+
+  /* ---------- Letter Spacing ---------- */
+
+  --letter-spacing-tight: -0.04em;
+
+  --letter-spacing-normal: 0;
+
+  --letter-spacing-wide: 0.04em;
+
+  --letter-spacing-wider: 0.08em;
+
+
+/* ========================================
+   SPACING
+   ======================================== */
+
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
+  --space-40: 10rem;    /* 160px */
+  --space-48: 12rem;    /* 192px */
+
+
+/* ========================================
+   LAYOUT
+   ======================================== */
+
+  /* ---------- Container ---------- */
+
+  --container-max-width: 1440px;
+
+  --container-padding: 1.25rem;
+
+
+  /* ---------- Content Width ---------- */
+
+  --content-max-width: 1200px;
+
+  --text-max-width: 720px;
+
+
+  /* ---------- Section Spacing ---------- */
+
+  --section-padding-mobile: 5rem;
+
+  --section-padding-desktop: 8rem;
+
+
+/* ========================================
+   BORDER RADIUS
+   ======================================== */
+
+
+  --radius-sm: 0.375rem;  /* 6px */
+  --radius-md: 0.75rem;   /* 12px */
+  --radius-lg: 1rem;      /* 16px */
+  --radius-xl: 1.5rem;    /* 24px */
+  --radius-full: 9999px;
+
+
+
+/* ========================================
+   SHADOWS
+   ======================================== */
+
+
+  --shadow-sm:
+    0 1px 2px rgba(0, 0, 0, 0.08);
+
+  --shadow-md:
+    0 4px 12px rgba(0, 0, 0, 0.12);
+
+  --shadow-lg:
+    0 12px 32px rgba(0, 0, 0, 0.16);
+
+  --shadow-xl:
+    0 24px 64px rgba(0, 0, 0, 0.2);
+
+
+
+/* ========================================
+   MOTION
+   ======================================== */
+
+
+  /* ---------- Durations ---------- */
+
+  --duration-fast: 150ms;
+
+  --duration-normal: 300ms;
+
+  --duration-slow: 500ms;
+
+  --duration-slower: 800ms;
+
+
+  /* ---------- Easing ---------- */
+
+  --ease-standard:
+    cubic-bezier(0.4, 0, 0.2, 1);
+
+  --ease-smooth:
+    cubic-bezier(0.22, 1, 0.36, 1);
+
+  --ease-expressive:
+    cubic-bezier(0.16, 1, 0.3, 1);
+
+
+
+/* ========================================
+   Z-INDEX
+   ======================================== */
+
+
+  --z-base: 1;
+
+  --z-dropdown: 100;
+
+  --z-sticky: 200;
+
+  --z-overlay: 300;
+
+  --z-modal: 400;
+
+  --z-toast: 500;
+
+
+  .logo{
+    width: 10rem;
+    height: auto;
+    position: relative;
+    top: var(--space-1);
+  }
+
+}
+
+
+/* ========================================
+   LIGHT THEME
+   ======================================== */
+
+[data-theme="light"] {
+  /* ---------- Backgrounds ---------- */
+
+  --color-bg: #f5f5f2;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #fafaf8;
+
+
+  /* ---------- Text ---------- */
+
+  --color-text-primary: #111111;
+  --color-text-secondary: #525252;
+  --color-text-muted: #737373;
+  --color-text-on-accent: #ffffff;
+
+
+  /* ---------- Borders ---------- */
+
+  --color-border: #e5e5e5;
+
+
+  /* ---------- Brand ---------- */
+
+  --color-accent: #2563eb;
+}
