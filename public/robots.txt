@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jhaycodesdev.vercel.app/sitemap.xml
