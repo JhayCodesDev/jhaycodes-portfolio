@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import Invitation from "./components/invitation/Invitation.jsx";
-import Layout from "./Layouts/Layout.jsx";
+import Layout from "./layouts/layout.jsx";
 import ScrollToHash from "./components/common/ScrollToHash.jsx";
 import FirstVisitGuard from "./components/common/FirstVisitGuard.jsx";
 import { Home } from "./pages/Home.jsx";
