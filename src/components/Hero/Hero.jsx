@@ -120,7 +120,7 @@ function Hero() {
             "
           >
             <Link
-              href="/work"
+              to="/work"
               className="
                 inline-flex
                 items-center
@@ -146,7 +146,7 @@ function Hero() {
             </Link>
 
             <Link
-              href="/#contact"
+              to="/#contact"
               className="
                 inline-flex
                 items-center
