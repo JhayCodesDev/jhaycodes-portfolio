@@ -14,8 +14,9 @@ function Invitation() {
   };
 
   const handleEnter = () => {
-    navigate("/");
-  };
+  localStorage.setItem("invitationSeen", "true");
+  navigate("/");
+};
 
   return (
     <section

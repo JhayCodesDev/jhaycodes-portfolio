@@ -1,8 +1,7 @@
 function Envelope({ isOpen, onOpen, onEnter }) {
   return (
-    <div className="relative flex h-[420px] w-full items-center justify-center">
-      <div className="relative h-full w-[320px]">
-
+    <div className="relative flex h-[470px] w-full flex-col items-center justify-center">
+      <div className="relative h-[420px] w-[320px]">
         {/* Invitation Card */}
         <div
           className={`
@@ -89,12 +88,12 @@ function Envelope({ isOpen, onOpen, onEnter }) {
             [transform-style:preserve-3d]
           "
         >
-
           {/* Envelope Body */}
           <div
             className="
               absolute
               inset-0
+              overflow-hidden
               rounded-md
               border
               border-(--color-border)
@@ -102,64 +101,62 @@ function Envelope({ isOpen, onOpen, onEnter }) {
               shadow-(--shadow-lg)
             "
           />
-
-          {/* Left Fold */}
+          {/* Bottom Envelope Folds */}
           <div
-            className="
-              absolute
-              bottom-0
-              left-0
-              z-20
-              h-full
-              w-1/2
-              origin-bottom-left
-              bg-(--color-surface)
-              [clip-path:polygon(0_0,100%_100%,0_100%)]
-            "
-          />
-
-          {/* Right Fold */}
-          <div
-            className="
-              absolute
-              bottom-0
-              right-0
-              z-20
-              h-full
-              w-1/2
-              origin-bottom-right
-              bg-(--color-surface)
-              [clip-path:polygon(100%_0,100%_100%,0_100%)]
-            "
+            className={`
+            absolute
+            inset-0
+            z-20
+            bg-(--color-surface)
+            [clip-path:polygon(0_0,50%_58%,100%_0,100%_100%,0_100%)]
+            transition-opacity
+            duration-300
+            ${isOpen ? "opacity-0" : "opacity-100"}
+          `}
           />
 
           {/* Envelope Flap */}
           <div
             className={`
-              absolute
-              left-0
-              top-0
-              z-40
-              h-[100px]
-              w-full
-              origin-top
-              border-b
-              border-(--color-border)
-              bg-(--color-surface)
-              [transform-style:preserve-3d]
-              [backface-visibility:hidden] 
-              [clip-path:polygon(0_0,100%_0,50%_100%)]
-              transition-transform
-              duration-[800ms]
-              delay-[250ms]
-              ease-[cubic-bezier(0.22,1,0.36,1)]
-              ${
-                isOpen
-                  ? "rotate-x-[-180deg]"
-                  : "rotate-x-0"
-              }
-            `}
+            absolute
+            left-0
+            top-0
+            z-15
+            h-[120px]
+            w-full
+            origin-top
+            bg-(--color-surface)
+            border-b
+            border-(--color-border)
+            [clip-path:polygon(0_0,100%_0,50%_100%)]
+            transition-transform
+            duration-[800ms]
+            ease-[cubic-bezier(0.22,1,0.36,1)]
+            ${isOpen ? "[transform:rotateX(180deg)]" : "[transform:rotateX(0deg)]"}
+          `}
           />
+
+          {/* V Shape Outline */}
+          <svg
+            className={`
+            pointer-events-none
+            absolute
+            inset-0
+            z-45
+            h-full
+            w-full
+            transition-opacity
+            duration-300
+            ${isOpen ? "opacity-0" : "opacity-100"}
+          `}
+          >
+            <path
+              d="M 0 0 L 150 120 L 300 0"
+              fill="none"
+              stroke="var(--color-border)"
+              strokeWidth="1"
+            />
+          </svg>
 
           {/* Seal */}
           <button
@@ -170,7 +167,7 @@ function Envelope({ isOpen, onOpen, onEnter }) {
             className={`
               absolute
               left-1/2
-              top-1/2
+              top-[120px]
               z-50
               flex
               h-12
@@ -200,6 +197,26 @@ function Envelope({ isOpen, onOpen, onEnter }) {
           </button>
         </div>
 
+        {/* Interaction Hint */}
+        <div
+          className={`
+            absolute
+            bottom-0
+            left-1/2
+            -translate-x-1/2
+            whitespace-nowrap
+            text-[9px]
+            font-medium
+            uppercase
+            tracking-[0.18em]
+            text-(--color-text-muted)
+            transition-all
+            duration-500
+            ${isOpen ? "translate-y-2 opacity-0" : "translate-y-0 opacity-100"}
+          `}
+        >
+          Click the seal to open
+        </div>
       </div>
     </div>
   );
